@@ -1,4 +1,5 @@
 Summary:	A simple TCP benchmarking utility
+Summary(pl):	Proste narzêdzie do pomiaru wydajno¶ci TCP
 Name:		gensink
 Version:	4.1
 Release:	1
@@ -11,6 +12,10 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 gensink consists of a pair of utilities that measure the performance
 of a TCP connection between two hosts.
 
+%description -l pl
+gensink sk³ada siê z pary narzêdzi, które okre¶laj± wydajno¶æ
+po³±czenia TCP pomiêdzy dwoma komputerami.
+
 %prep
 %setup -q
 
@@ -21,7 +26,6 @@ of a TCP connection between two hosts.
 	LDFLAGS="%{rpmldflags}"
 
 %install
-
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{_sbindir}
 

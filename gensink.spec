@@ -6,6 +6,7 @@ Release:	1
 License:	GPL
 Group:		Applications/Networking
 Source0:	http://jes.home.cern.ch/jes/gensink/%{name}-%{version}.tar.gz
+# Source0-md5:	82f029c4a450531ff44ad4eef6c38012
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description

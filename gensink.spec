@@ -1,42 +1,35 @@
-Summary: A simple TCP benchmarking utility
-Name: gensink
-Version: 4.1
-Release: 1
-Copyright: GPL
-Group: Applications/Internet
-Source0: http://home.cern.ch/~jes/gensink-4.1.tar.gz
-BuildRoot: /var/tmp/gensink-%{version}
+Summary:	A simple TCP benchmarking utility
+Name:		gensink
+Version:	4.1
+Release:	1
+License:	GPL
+Group:		Applications/Networking
+Source0:	http://jes.home.cern.ch/jes/gensink/%{name}-%{version}.tar.gz
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-gensink consists of a pair of utilities that measure the performance of
-a TCP connection between two hosts.
+gensink consists of a pair of utilities that measure the performance
+of a TCP connection between two hosts.
 
 %prep
-%setup 
- 
+%setup -q
+
 %build
-make
+%{__make} \
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 
-mkdir -p $RPM_BUILD_ROOT/usr/sbin
-install -m 755 gen4 $RPM_BUILD_ROOT/usr/sbin/gen4
-install -m 755 sink4 $RPM_BUILD_ROOT/usr/sbin/sink4
-install -m 755 tub4 $RPM_BUILD_ROOT/usr/sbin/tub4
+rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT%{_sbindir}
+
+install gen4 sink4 tub4 $RPM_BUILD_ROOT%{_sbindir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-%doc COPYING
-/usr/sbin/gen4
-/usr/sbin/sink4
-/usr/sbin/tub4
-%changelog
-* Wed May 16 2001 Jes Sorensen <jes@trained-monkey.org>
-- Bumped to 4.1
-* Mon Mar 12 2001 Sandro Mazzucato <sandro@zeroknowledge.com>
-- Added tub4
-* Sat Oct 14 2000 Zach Brown <zab@zabbo.net>
-- first pass
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_sbindir}/*

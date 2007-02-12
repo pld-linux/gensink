@@ -1,5 +1,5 @@
 Summary:	A simple TCP benchmarking utility
-Summary(pl):	Proste narzêdzie do pomiaru wydajno¶ci TCP
+Summary(pl.UTF-8):   Proste narzÄ™dzie do pomiaru wydajnoÅ›ci TCP
 Name:		gensink
 Version:	4.1
 Release:	1
@@ -13,9 +13,9 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 gensink consists of a pair of utilities that measure the performance
 of a TCP connection between two hosts.
 
-%description -l pl
-gensink sk³ada siê z pary narzêdzi, które okre¶laj± wydajno¶æ
-po³±czenia TCP pomiêdzy dwoma komputerami.
+%description -l pl.UTF-8
+gensink skÅ‚ada siÄ™ z pary narzÄ™dzi, ktÃ³re okreÅ›lajÄ… wydajnoÅ›Ä‡
+poÅ‚Ä…czenia TCP pomiÄ™dzy dwoma komputerami.
 
 %prep
 %setup -q

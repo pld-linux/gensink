@@ -1,5 +1,5 @@
 Summary:	A simple TCP benchmarking utility
-Summary(pl.UTF-8):   Proste narzędzie do pomiaru wydajności TCP
+Summary(pl.UTF-8):	Proste narzędzie do pomiaru wydajności TCP
 Name:		gensink
 Version:	4.1
 Release:	1
